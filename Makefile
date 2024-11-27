@@ -7,10 +7,7 @@ phpspec:
 phpstan:
 	vendor/bin/phpstan analyse
 
-psalm:
-	vendor/bin/psalm
-
-behat-js:
+behat:
 	APP_ENV=test vendor/bin/behat --colors --strict --no-interaction -vvv -f progress
 
 install:
@@ -23,9 +20,6 @@ backend:
 frontend:
 	(cd tests/Application && yarn install --pure-lockfile)
 	(cd tests/Application && GULP_ENV=prod yarn build)
-
-behat:
-	APP_ENV=test vendor/bin/behat --colors --strict --no-interaction -vvv -f progress
 
 init: install backend frontend
 

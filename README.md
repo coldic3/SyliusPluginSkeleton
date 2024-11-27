@@ -59,7 +59,7 @@ To be able to set up a plugin's database, remember to configure you database cre
   - Behat (non-JS scenarios)
 
     ```bash
-    vendor/bin/behat --strict --tags="~@javascript"
+    vendor/bin/behat --strict --tags="~@javascript&&~@mink:chromedriver"
     ```
 
   - Behat (JS scenarios)
@@ -86,12 +86,6 @@ To be able to set up a plugin's database, remember to configure you database cre
       ```
     
   - Static Analysis
-  
-    - Psalm
-    
-      ```bash
-      vendor/bin/psalm
-      ```
       
     - PHPStan
     
