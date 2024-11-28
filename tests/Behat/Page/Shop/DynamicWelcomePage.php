@@ -43,7 +43,7 @@ class DynamicWelcomePage extends SymfonyPage implements WelcomePageInterface
     protected function getDefinedElements(): array
     {
         return array_merge(parent::getDefinedElements(), [
-            'greeting' => '#greeting',
+            'greeting' => '[data-test-dynamic-greeting]',
         ]);
     }
 }
