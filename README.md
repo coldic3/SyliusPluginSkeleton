@@ -82,7 +82,7 @@ To be able to set up a plugin's database, remember to configure you database cre
     4. Run Behat:
     
       ```bash
-      vendor/bin/behat --strict --tags="@javascript"
+      vendor/bin/behat --strict --tags="@javascript,@mink:chromedriver"
       ```
     
   - Static Analysis
