@@ -49,11 +49,13 @@ To be able to set up a plugin's database, remember to configure your database cr
 
 ### Docker
 
-1. Execute `docker compose up -d`
+1. Execute `make init` to initialize the container and install the dependencies.
 
-2. Initialize plugin `docker compose exec app make init`
+2. Execute `make database-init` to create the database and run migrations.
 
-3. See your browser `open localhost`
+3. (Optional) Execute `make load-fixtures` to load the fixtures.
+
+4. Your app is available at `http://localhost`.
 
 ## Usage
 
