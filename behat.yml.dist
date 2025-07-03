@@ -32,8 +32,6 @@ default:
                         validate_certificate: false
                 panther:
                     panther:
-                        options:
-                            webServerDir: '%paths.base%/vendor/sylius/test-application/public'
                         manager_options:
                             connection_timeout_in_ms: 5000
                             request_timeout_in_ms: 120000
@@ -44,6 +42,24 @@ default:
                                 acceptSslCerts: true
                                 acceptInsecureCerts: true
                                 unexpectedAlertBehaviour: accept
+                        options:
+                            webServerDir: '%paths.base%/vendor/sylius/test-application/public'
+                            browser_arguments:
+                                - --window-size=1200,1000
+                                - --headless
+                                - --no-sandbox
+                                - --disable-dev-shm-usage
+                                - --disable-gpu
+                                - --disable-infobars
+                                - --disable-features=TranslateUI
+                                - --disable-translate
+                                - --disable-popup-blocking
+                                - --disable-blink-features=AutomationControlled
+                                - --disable-component-extensions-with-background-pages
+                                - --disable-background-networking
+                                - --disable-dev-tools
+                                - --disable-extensions
+                                - --disable-password-manager-leak-detection
             show_auto: false
 
         FriendsOfBehat\SymfonyExtension:
