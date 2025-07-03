@@ -17,6 +17,8 @@
 For a comprehensive guide on Sylius Plugins development please go to Sylius documentation,
 there you will find the <a href="https://docs.sylius.com/en/latest/plugin-development-guide/index.html">Plugin Development Guide</a>, that is full of examples.
 
+For more information about the **Test Application** included in the skeleton, please refer to the [Sylius documentation](https://docs.sylius.com/sylius-plugins/plugins-development-guide/testapplication).
+
 ## Quickstart Installation
 
 Run `composer create-project sylius/plugin-skeleton ProjectName`.
@@ -26,14 +28,14 @@ Run `composer create-project sylius/plugin-skeleton ProjectName`.
 1. From the plugin skeleton root directory, run the following commands:
 
     ```bash
-    $ (cd tests/Application && yarn install)
-    $ (cd tests/Application && yarn build)
-    $ (cd tests/Application && APP_ENV=test bin/console assets:install public)
-
-    $ (cd tests/Application && APP_ENV=test bin/console doctrine:database:create)
-    $ (cd tests/Application && APP_ENV=test bin/console doctrine:schema:create)
+    (cd vendor/sylius/test-application && yarn install)
+    (cd vendor/sylius/test-application && yarn build)
+    vendor/bin/console assets:install
+   
+    vendor/bin/console doctrine:database:create
+    vendor/bin/console doctrine:migrations:migrate -n
     # Optionally load data fixtures
-    $ (cd tests/Application && APP_ENV=test bin/console sylius:fixtures:load --no-interaction)
+    vendor/bin/console vendor/bin/console sylius:fixtures:load -n
     ```
 
 To be able to set up a plugin's database, remember to configure your database credentials in `tests/Application/.env` and `tests/Application/.env.test`.
@@ -42,7 +44,7 @@ To be able to set up a plugin's database, remember to configure your database cr
 
       ```bash
       symfony server:ca:install
-      APP_ENV=test symfony server:start --dir=tests/Application/public --daemon
+      symfony server:start -d
       ```
 
 3. Open your browser and navigate to `https://localhost:8000`.
@@ -93,7 +95,7 @@ To be able to set up a plugin's database, remember to configure your database cr
     
       ```bash
       symfony server:ca:install
-      APP_ENV=test symfony server:start --port=8080 --dir=tests/Application/public --daemon
+      APP_ENV=test symfony server:start --port=8080 --daemon
       ```
     
     4. Run Behat:
@@ -121,13 +123,13 @@ To be able to set up a plugin's database, remember to configure your database cr
 - Using `test` environment:
 
     ```bash
-    (cd tests/Application && APP_ENV=test bin/console sylius:fixtures:load)
-    (cd tests/Application && APP_ENV=test bin/console server:run -d public)
+    APP_ENV=test vendor/bin/console vendor/bin/console sylius:fixtures:load -n
+    APP_ENV=test symfony server:start -d
     ```
     
 - Using `dev` environment:
 
     ```bash
-    (cd tests/Application && APP_ENV=dev bin/console sylius:fixtures:load)
-    (cd tests/Application && APP_ENV=dev bin/console server:run -d public)
+    vendor/bin/console vendor/bin/console sylius:fixtures:load -n
+    symfony server:start -d
     ```
