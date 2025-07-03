@@ -34,7 +34,7 @@
         "sylius-labs/coding-standard": "^4.4",
         "sylius-labs/suite-tags-extension": "~0.2",
         "sylius/sylius-rector": "^2.0",
-        "sylius/test-application": "^2.0",
+        "sylius/test-application": "^2.0.0@alpha",
         "symfony/browser-kit": "^6.4 || ^7.1",
         "symfony/contracts": "^3.6",
         "symfony/debug-bundle": "^6.4 || ^7.1",
@@ -42,9 +42,9 @@
         "symfony/flex": "^2.4",
         "symfony/http-client": "^6.4 || ^7.1",
         "symfony/intl": "^6.4 || ^7.1",
+        "symfony/runtime": "^6.4 || ^7.1",
         "symfony/web-profiler-bundle": "^6.4 || ^7.1",
-        "symfony/webpack-encore-bundle": "^2.2",
-        "symfony/runtime": "^6.4"
+        "symfony/webpack-encore-bundle": "^2.2"
     },
     "config": {
         "sort-packages": true,
@@ -67,10 +67,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Acme\\SyliusExamplePlugin\\": "src/",
-            "Tests\\Acme\\SyliusExamplePlugin\\": "tests/"
+            "Acme\\SyliusExamplePlugin\\": "src/"
         }
     },
-    "minimum-stability": "alpha",
-    "prefer-stable": true
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Acme\\SyliusExamplePlugin\\": ["tests/", "tests/TestApplication/src/"]
+        }
+    }
 }
