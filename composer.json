@@ -74,5 +74,21 @@
         "psr-4": {
             "Tests\\Acme\\SyliusExamplePlugin\\": ["tests/", "tests/TestApplication/src/"]
         }
+    },
+    "scripts": {
+        "database-reset": [
+            "vendor/bin/console doctrine:database:drop --force --if-exists",
+            "vendor/bin/console doctrine:database:create",
+            "vendor/bin/console doctrine:migration:migrate -n",
+            "vendor/bin/console sylius:fixtures:load -n"
+        ],
+        "frontend-clear": [
+            "cd vendor/sylius/test-application && yarn install && yarn build",
+            "vendor/bin/console assets:install"
+        ],
+        "test-app-init": [
+            "@database-reset",
+            "@frontend-clear"
+        ]
     }
 }
