@@ -35,7 +35,7 @@ Run `composer create-project sylius/plugin-skeleton ProjectName`.
     vendor/bin/console doctrine:database:create
     vendor/bin/console doctrine:migrations:migrate -n
     # Optionally load data fixtures
-    vendor/bin/console vendor/bin/console sylius:fixtures:load -n
+    vendor/bin/console sylius:fixtures:load -n
     ```
 
 To be able to set up a plugin's database, remember to configure your database credentials in `tests/Application/.env` and `tests/Application/.env.test`.
