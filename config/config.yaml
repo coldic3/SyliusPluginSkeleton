@@ -1,2 +1,1 @@
-imports:
-    - { resource: "app/twig_hooks/**/*.yaml" }
+# Put your plugin configuration here
