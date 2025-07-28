@@ -38,7 +38,6 @@
         "symfony/contracts": "^3.6",
         "symfony/debug-bundle": "^6.4 || ^7.1",
         "symfony/dotenv": "^6.4 || ^7.1",
-        "symfony/flex": "^2.4",
         "symfony/http-client": "^6.4 || ^7.1",
         "symfony/intl": "^6.4 || ^7.1",
         "symfony/runtime": "^6.4 || ^7.1",
