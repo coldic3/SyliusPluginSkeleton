@@ -112,3 +112,13 @@ This is a **Sylius Plugin Skeleton** - a template for creating Sylius e-commerce
 Database credentials should be configured in:
 - `tests/Application/.env` (for development)
 - `tests/Application/.env.test` (for testing)
+
+## AI Development Guides
+
+This project includes specialized AI guides to assist with common plugin development tasks:
+
+- **CLEANUP_GUIDE.md** - Guidelines for cleaning up and organizing plugin code
+- **RENAME_GUIDE.md** - Step-by-step instructions for renaming plugins and components
+- **COMPATIBILITY_GUIDE.md** - Best practices for maintaining compatibility across different Sylius versions
+
+These guides provide detailed instructions and automated workflows to help maintain code quality and ensure proper plugin structure.
