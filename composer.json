@@ -35,7 +35,6 @@
         "sylius/sylius-rector": "^2.0",
         "sylius/test-application": "^2.0.0@alpha",
         "symfony/browser-kit": "^6.4 || ^7.1",
-        "symfony/contracts": "^3.6",
         "symfony/debug-bundle": "^6.4 || ^7.1",
         "symfony/dotenv": "^6.4 || ^7.1",
         "symfony/http-client": "^6.4 || ^7.1",
